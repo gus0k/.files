@@ -1,8 +1,15 @@
-# Centrica's session
+# Default's session
 
-new -s Centrica -n Journal journalhandler
-neww -n Code 
-neww -n Connections
-splitw -v -p 50 -t 0 cpvn
+## Journal window
+new -s Default -n Journal
+send-keys journalhandler Enter
+
+## Simple window
+neww -n Status
+splitw -h
+send-keys htop Enter
 selectp -t 0
-selectw -t 1
+
+## Code window
+neww -n Code
+send-keys "cd ~/github" Enter

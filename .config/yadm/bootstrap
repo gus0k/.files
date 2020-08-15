@@ -1,10 +1,27 @@
 #!/bin/bash
 
+
 if command -v apt-get &> /dev/null
 then
     sudo apt-get update
-    sudo apt-get install -y neovim git
+    sudo apt-get install -y \
+	    neovim \
+	    git \
+	    python3-pip \
+	    python3-venv \
+	    zsh \
+	    htop \
+
 fi
+
+chsh -s /bin/zsh
+
+
+python3 -m pip install pipx
+pipx install csvkit
+pipx install qtconsole
+pipx runpip qtconsole install pyqt5
+
 
 ## Swap caps and escape for good :)
 if command -v dconf &> /dev/null
