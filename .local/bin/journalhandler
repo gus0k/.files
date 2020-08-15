@@ -1,0 +1,11 @@
+#!/bin/bash
+
+today="$(date +"%d%m%Y").md"
+path="${JOURNALPATH}/${today}"
+
+if [ ! -f "${path}" ]; then
+	touch "$path"
+fi
+
+cd $JOURNALPATH
+nvim "$today"
