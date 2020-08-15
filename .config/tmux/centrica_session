@@ -1,0 +1,8 @@
+# Centrica's session
+
+new -s Centrica -n Journal journalhandler
+neww -n Code 
+neww -n Connections
+splitw -v -p 50 -t 0 cpvn
+selectp -t 0
+selectw -t 1

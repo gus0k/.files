@@ -1,0 +1,20 @@
+alias v="nvim"
+alias vim="nvim"
+alias ls="ls --color=auto"
+alias l="ls -lah"
+alias g="git"
+
+alias ..="cd .."
+alias ...="cd ../.."
+
+alias Rz="source ~/.zshrc"
+alias tmux="tmux -f ${HOME}/.config/tmux/tmux.conf"
+
+## Python
+
+alias S="source venv/bin/activate"
+alias ipy="ipython --matplotlib=tk"
+
+## Centrica
+
+alias cvpn="sudo openvpn /etc/openvpn/diego_centrica.ovpn"
