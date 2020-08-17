@@ -57,6 +57,8 @@ vnoremap k gk
 nnoremap <F2> :Copen<CR>
 inoremap <F2> :Copen<CR>
 
+nnoremap <Leader>vr :source $MYVIMRC<CR>
+
 " Jump over delimiter
 inoremap <S-Tab> <esc>la
 

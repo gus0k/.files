@@ -1,1 +1,1 @@
-export JOURNALPATH="/home/diego/github/knowledgebase/journal"
+export JOURNALPATH="$HOME/github/knowledgebase/journal"

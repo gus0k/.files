@@ -3,6 +3,7 @@ alias vim="nvim"
 alias ls="ls --color=auto"
 alias l="ls -lah"
 alias g="git"
+alias rm="trash"
 
 alias ..="cd .."
 alias ...="cd ../.."

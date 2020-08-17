@@ -11,6 +11,7 @@ then
 	    python3-venv \
 	    zsh \
 	    htop \
+	    trash-cli \
 
 fi
 

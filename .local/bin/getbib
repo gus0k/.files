@@ -1,0 +1,20 @@
+#!/bin/sh
+[ -z "$1" ] && echo "This needs to be a pdf or a DOI" && exit
+
+if [ -f "$1" ]; then
+    # Try to get doi from pdf
+    doi=$(pdfinfo "$1" | grep -oE "10\..*/.*") ||
+    doi=$(pdftotext "$1" - | grep -oE "10\..*/.*") ||
+    exit 1
+else
+    doi="$1"
+fi
+
+case "$2" in
+    -q)
+    curl -s "http://api.crossref.org/works/$doi/transform/application/x-bibtex" -w "\\n"
+    ;;
+    *)
+    echo "DOI found: $doi"
+    ;;
+esac

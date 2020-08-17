@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mkdir -p "$JOURNALPATH"
+
 today="$(date +"%d%m%Y").md"
 path="${JOURNALPATH}/${today}"
 

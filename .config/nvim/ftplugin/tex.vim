@@ -8,3 +8,8 @@ ab iitt \textit{}<Left>
 ab mk	$$<Left>
 ab dk \[<CR><BS><CR><BS>.\]<Up>
 ab ct \cite{}<Left><C-X><C-]>
+
+ab frame_ \begin{frame}{}<CR><CR>\end{frame}<Up>
+ab item_  \begin{itemize}{}<CR>\item<CR>\end{itemize}<Up>
+
+
