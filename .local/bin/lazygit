@@ -1,0 +1,8 @@
+#!/bin/bash
+
+pushd $PWD
+cd $(git root)
+git add .
+git commit -m "Lazy git"
+git push
+popd
