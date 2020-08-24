@@ -12,6 +12,8 @@ then
 	    zsh \
 	    htop \
 	    trash-cli \
+	    ffmpeg \
+	    python3-tk
 
 fi
 
@@ -22,6 +24,7 @@ python3 -m pip install pipx
 pipx install csvkit
 pipx install qtconsole
 pipx runpip qtconsole install pyqt5
+pipx install youtube-dl
 
 
 ## Swap caps and escape for good :)

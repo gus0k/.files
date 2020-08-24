@@ -1,12 +1,20 @@
-alias v="nvim"
-alias vim="nvim"
+# vim: filetype=sh
+
 alias ls="ls --color=auto"
 alias l="ls -lah"
-alias g="git"
 alias rm="trash"
 
 alias ..="cd .."
 alias ...="cd ../.."
+alias ....="cd ../../.."
+
+## Git
+alias g="git"
+alias lg=lazygit
+
+# Neovim
+alias v="nvim"
+alias vim="nvim"
 
 alias Rz="source ~/.zshrc"
 alias tmux="tmux -f ${HOME}/.config/tmux/tmux.conf"
@@ -17,5 +25,4 @@ alias S="source venv/bin/activate"
 alias ipy="ipython --matplotlib=tk --no-confirm-exit --no-banner --quick --InteractiveShellApp.extensions=\"['autoreload']\" --InteractiveShellApp.exec_lines=\"['%autoreload 2', 'import os,sys']\""
 
 ## Centrica
-
 alias cvpn="sudo openvpn /etc/openvpn/diego_centrica.ovpn"
