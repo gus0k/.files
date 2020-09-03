@@ -14,10 +14,13 @@ then
 	    trash-cli \
 	    ffmpeg \
 	    python3-tk
+    	    snap \
 
 fi
 
 chsh -s /bin/zsh
+
+snap install universal-ctags
 
 
 python3 -m pip install pipx
