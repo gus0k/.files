@@ -13,19 +13,27 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'ajh17/VimCompletesMe'
+Plug 'jpalardy/vim-slime'
+Plug 'ludovicchabant/vim-gutentags'
+
+
+Plug 'davidhalter/jedi-vim'
 call plug#end()
 
 
 "filetype plugin indent on
+nnoremap ; :
 filetype on
 
 syntax enable
 
 set encoding=utf-8
+set hidden
 
 " Statusline
 set nu rnu
 set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
+set statusline+=%{gutentags#statusline()}
 
 " Ignore case almost always
 set ignorecase smartcase
@@ -38,6 +46,9 @@ set wildmenu
 		
 " Undofile
 set undofile
+
+" Sudo after opening file
+cmap w!! w !sudo tee % >/dev/null
 
 inoremap <silent> kj <Esc>
 
@@ -58,7 +69,9 @@ vnoremap k gk
 nnoremap <F2> :Copen<CR>
 inoremap <F2> :Copen<CR>
 
-nnoremap <Leader>vr :source $MYVIMRC<CR>
+" Reload nvim config
+nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
+nnoremap <Leader>sv :source $MYVIMRC<CR>
 
 " Jump over delimiter
 inoremap <S-Tab> <esc>la
@@ -94,3 +107,9 @@ let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_browse_split = 2
 let g:netrw_winsize = 25
+
+
+" Jedi
+"
+let g:jedi#completions_command = "<C-N>"
+
