@@ -22,7 +22,7 @@ alias tmux="tmux -f ${HOME}/.config/tmux/tmux.conf"
 ## Python
 
 alias S="source venv/bin/activate"
-alias ipy="ipython --matplotlib=tk"
+alias ipy="ipython --matplotlib=tk --no-confirm-exit --no-banner --quick --InteractiveShellApp.extensions=\"['autoreload']\" --InteractiveShellApp.exec_lines=\"['%autoreload 2', 'import os,sys']\""
 
 ## Centrica
 alias cvpn="sudo openvpn /etc/openvpn/diego_centrica.ovpn"
