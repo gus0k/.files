@@ -15,6 +15,7 @@ then
 	    ffmpeg \
 	    python3-tk
     	    snap \
+	    fzf \
 
 fi
 
