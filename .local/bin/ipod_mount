@@ -1,0 +1,4 @@
+#!/bin/bash
+# vim: filetype=bash
+sudo umount /dev/sdb2
+sudo mount -t hfsplus -o force,rw /dev/sdb2 /media/mntpoint
