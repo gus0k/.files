@@ -29,3 +29,7 @@ alias cvpn="sudo openvpn /etc/openvpn/diego_centrica.ovpn"
 
 ## Ipod
 alias mount-ipod="sudo mount -t hfsplus -o force,rw /dev/sdb2 /media/mntpoint"
+
+
+
+### One password
