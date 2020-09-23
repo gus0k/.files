@@ -33,7 +33,7 @@ set hidden
 " Statusline
 set nu rnu
 set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
-set statusline+=%{gutentags#statusline()}
+" set statusline+=%{gutentags#statusline()}
 
 " Ignore case almost always
 set ignorecase smartcase
