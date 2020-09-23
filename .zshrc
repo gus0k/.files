@@ -1,5 +1,6 @@
 ## Load my personal aliases
 [[ -f ~/.config/aliases ]] && source ~/.config/aliases
+[[ -f ~/.config/aliases_local ]] && source ~/.config/aliases_local
 [[ -f ~/.config/functions ]] && source ~/.config/functions
 
 export PATH=$HOME/.local/bin:$PATH
