@@ -113,3 +113,4 @@ let g:netrw_winsize = 25
 "
 let g:jedi#completions_command = "<C-N>"
 
+au BufRead,BufNewFile *.tsv setfiletype tsv
