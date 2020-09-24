@@ -20,6 +20,7 @@ Plug 'jpalardy/vim-slime'
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 call plug#end()
 
+let mapleader = "\\"
 
 "filetype plugin indent on
 nnoremap ; :
@@ -33,7 +34,7 @@ set hidden
 " Statusline
 set nu rnu
 set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
-set statusline+=%{gutentags#statusline()}
+" set statusline+=%{gutentags#statusline()}
 
 " Ignore case almost always
 set ignorecase smartcase
@@ -65,6 +66,7 @@ nnoremap j gj
 nnoremap k gk
 vnoremap j gj
 vnoremap k gk
+nnoremap <leader>b :ls<cr>:b<space>
 
 nnoremap <F2> :Copen<CR>
 inoremap <F2> :Copen<CR>
