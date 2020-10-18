@@ -73,3 +73,5 @@ bindkey '^R'      history-incremental-pattern-search-backward
 _systemctl_unit_state() {
   typeset -gA _sys_unit_state
   _sys_unit_state=( $(__systemctl list-unit-files "$PREFIX*" | awk '{print $1, $2}') ) }
+
+export LEDGER_FILE=~/github/finance/2020.journal

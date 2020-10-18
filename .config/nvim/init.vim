@@ -94,6 +94,8 @@ inoremap <silent> ,u <C-x><C-u>
 
 let g:tex_flavor = "latex"
 
+
+" My tiny trick for local vim configuration
 function! SourceIfExists(file)
   if filereadable(expand(a:file))
     exe 'source' a:file
@@ -116,3 +118,7 @@ let g:netrw_winsize = 25
 let g:jedi#completions_command = "<C-N>"
 
 au BufRead,BufNewFile *.tsv setfiletype tsv
+
+
+
+tnoremap <Esc> <C-\><C-n>
