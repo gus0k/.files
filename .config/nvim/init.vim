@@ -12,7 +12,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
-Plug 'ajh17/VimCompletesMe'
 Plug 'jpalardy/vim-slime'
 "Plug 'ludovicchabant/vim-gutentags'
 
