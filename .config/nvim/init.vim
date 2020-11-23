@@ -15,8 +15,11 @@ Plug 'tpope/vim-commentary'
 Plug 'jpalardy/vim-slime'
 "Plug 'ludovicchabant/vim-gutentags'
 
+Plug 'mhinz/vim-startify'
+Plug 'freitass/todo.txt-vim'
 
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 call plug#end()
 
 let mapleader = "\\"
@@ -71,8 +74,8 @@ nnoremap <F2> :Copen<CR>
 inoremap <F2> :Copen<CR>
 
 " Reload nvim config
-nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
-nnoremap <Leader>sv :source $MYVIMRC<CR>
+nnoremap <silent> <leader>ei :e $MYVIMRC<CR>
+nnoremap <Leader>si :source $MYVIMRC<CR>
 
 " Jump over delimiter
 inoremap <S-Tab> <esc>la
@@ -118,6 +121,48 @@ let g:jedi#completions_command = "<C-N>"
 
 au BufRead,BufNewFile *.tsv setfiletype tsv
 
+" Citations bibtex
+nnoremap <leader>bk ?@<cr>f{lvt,y
+
+tnoremap kj <C-\><C-n>
+inoremap kj <esc>
+
+function s:exec_on_term(lnum1, lnum2)
+  " get terminal buffer
+  let g:terminal_buffer = get(g:, 'terminal_buffer', -1)
+  " open new terminal if it doesn't exist
+  if g:terminal_buffer == -1 || !bufexists(g:terminal_buffer)
+    terminal
+    let g:terminal_buffer = bufnr('')
+    wincmd p
+  " split a new window if terminal buffer hidden
+  elseif bufwinnr(g:terminal_buffer) == -1
+    exec 'sbuffer ' . g:terminal_buffer
+    wincmd p
+  endif
+  " join lines with "\<cr>", note the extra "\<cr>" for last line
+  " send joined lines to terminal.
+  call term_sendkeys(g:terminal_buffer,
+        \ join(getline(a:lnum1, a:lnum2), "\<cr>") . "\<cr>")
+endfunction
+
+command! -range ExecOnTerm call s:exec_on_term(<line1>, <line2>)
+nnoremap <leader>ex :ExecOnTerm<cr>
+vnoremap <leader>ex :ExecOnTerm<cr>
 
 
-tnoremap <Esc> <C-\><C-n>
+
+" Startify
+nnoremap <leader>st :Startify<cr>
+let g:startify_lists = [
+  \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+  \ { 'type': 'files',     'header': ['   MRU']            },
+  \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+  \ { 'type': 'sessions',  'header': ['   Sessions']       },
+  \ { 'type': 'commands',  'header': ['   Commands']       },
+  \ ]
+let g:startify_bookmarks = [
+	\ {'t': '~/Nextcloud/tasks/todo.txt'},
+	\ '~/Nextcloud/Notes/db/daily.txt',
+	\ '~/.config/nvim/init.vim',
+	\ ]
