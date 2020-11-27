@@ -14,7 +14,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'jpalardy/vim-slime'
 "Plug 'ludovicchabant/vim-gutentags'
-
+Plug 'jupyter-vim/jupyter-vim'
 Plug 'mhinz/vim-startify'
 Plug 'freitass/todo.txt-vim'
 
@@ -166,3 +166,13 @@ let g:startify_bookmarks = [
 	\ '~/Nextcloud/Notes/db/daily.txt',
 	\ '~/.config/nvim/init.vim',
 	\ ]
+
+
+if has('nvim')
+    let g:python3_host_prog = '/usr/bin/python3'
+endif
+
+let g:slime_target = "x11"
+let g:slime_python_ipython_qtconsole = 1
+
+nmap <leader>tt <Plug>SlimeSendCell
